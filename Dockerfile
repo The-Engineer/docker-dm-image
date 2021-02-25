@@ -13,9 +13,10 @@ RUN apt install openjdk-8-jdk -y
 RUN wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P /tmp
 RUN tar xf /tmp/apache-maven-3.6.3-bin.tar.gz -C /opt
 RUN ln -s /opt/apache-maven-3.6.3 /opt/maven
-RUN export M2_HOME=/opt/apache-maven-3.6.3
-RUN export MAVEN_HOME=/opt/apache-maven-3.6.3
-RUN export PATH=${M2_HOME}/bin:${PATH}
+
+ENV M2_HOME=/opt/apache-maven-3.6.3
+ENV MAVEN_HOME=/opt/apache-maven-3.6.3
+ENV PATH=${M2_HOME}/bin:${PATH}
 
 # Install NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -

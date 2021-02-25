@@ -22,8 +22,8 @@ RUN npm install npm@latest -g
 RUN npm update -g npm
 
 # Install neccessary modules
-RUN npm install -g grunt@1.0.4
-RUN npm install -g grunt-cli@1.2.0 --force
+#RUN npm install -g grunt@1.0.4
+RUN npm install -g grunt-cli@1.2.0
 
 # Run cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*

@@ -23,7 +23,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
 
 # Update npm to latest version
-RUN npm install npm@latest -g
+#RUN npm install npm@latest -g
 
 # Update npm
 RUN npm update -g npm

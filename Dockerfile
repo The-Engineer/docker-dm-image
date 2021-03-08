@@ -33,6 +33,9 @@ RUN npm update -g npm
 RUN npm install -g grunt-cli@1.2.0
 #RUN npm install -g grunt@1.0.4
 
+# Install Ansible
+RUN apt install ansible -y
+
 # Run cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 

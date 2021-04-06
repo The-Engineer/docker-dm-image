@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
 LABEL maintainer="Felix Barsnick"
-LABEL version="1.0"
+LABEL version="1.1"
 
 # Install required packages for next installs
-RUN apt-get update && apt-get install -y wget curl
+RUN apt update && apt install -y wget curl openssh-client
 
 # Install Java JDK 8
 RUN apt install openjdk-8-jdk -y
@@ -20,7 +20,7 @@ ENV PATH=${M2_HOME}/bin:${PATH}
 
 # Install NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN apt-get install -y nodejs
+RUN apt install -y nodejs
 
 # Update npm to latest version
 #RUN npm install npm@latest -g

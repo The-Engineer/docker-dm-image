@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
 LABEL maintainer="Felix Barsnick"
-LABEL version="1.2"
+LABEL version="1.3"
 
 # Install required packages for next installs
-RUN apt update && apt install -y wget curl openssh-client libxml2-utils
+RUN apt update && apt install -y wget curl openssh-client libxml2-utils tree
 
 # Install Java JDK 8
 RUN apt install openjdk-8-jdk -y

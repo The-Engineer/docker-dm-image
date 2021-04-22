@@ -38,9 +38,11 @@ RUN npm install -g yarn
 RUN apt install ansible -y
 
 # Coverage stuff
-# python 3.6.9 already installed in base image
-# copy jacoco jar
+# python 2.7.17 and 3.6.9 already installed in base image
+# copy jacoco-0.7.6.201602180812 jar
+COPY jacocoant.jar /opt/jacocoant.jar
 # copy python script
+COPY cover2cover.py /opt/cover2cover.py
 
 # Run cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*

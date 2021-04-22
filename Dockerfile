@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 LABEL maintainer="Felix Barsnick"
-LABEL version="1.3"
+LABEL version="1.4"
 
 # Install required packages for next installs
 RUN apt update && apt install -y wget curl openssh-client libxml2-utils tree
@@ -28,7 +28,7 @@ RUN apt install -y nodejs
 # Update npm
 RUN npm update -g npm
 
-# Install neccessary modules
+# Install neccessary npm modules
 #RUN npm install -g grunt@1.0.4
 RUN npm install -g grunt-cli@1.2.0
 #RUN npm install -g grunt@1.0.4
@@ -36,6 +36,11 @@ RUN npm install -g yarn
 
 # Install Ansible
 RUN apt install ansible -y
+
+# Coverage stuff
+# python 3.6.9 already installed in base image
+# copy jacoco jar
+# copy python script
 
 # Run cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*

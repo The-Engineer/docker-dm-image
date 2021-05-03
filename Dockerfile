@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 LABEL maintainer="Felix Barsnick"
-LABEL version="1.4"
+LABEL version="1.5"
 
 # Install required packages for next installs
 RUN apt update && apt install -y wget curl openssh-client libxml2-utils tree
@@ -43,6 +43,9 @@ RUN apt install ansible -y
 COPY jacocoant.jar /opt/jacocoant.jar
 # copy python script
 COPY cover2cover.py /opt/cover2cover.py
+
+# for release install git
+RUN apt install git -y
 
 # Run cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*

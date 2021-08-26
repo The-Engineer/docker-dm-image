@@ -3,7 +3,8 @@ LABEL maintainer="Felix Barsnick"
 LABEL version="1.5"
 
 # Install required packages for next installs
-RUN apt update && apt install -y wget curl openssh-client libxml2-utils tree
+RUN apt update && apt upgrade -y
+RUN apt install -y wget curl openssh-client libxml2-utils tree
 
 # Install Java JDK 8
 RUN apt install openjdk-8-jdk -y

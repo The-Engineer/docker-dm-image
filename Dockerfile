@@ -31,7 +31,7 @@ RUN npm update -g npm
 
 # Install neccessary npm modules
 #RUN npm install -g grunt@1.0.4
-RUN npm install -g grunt-cli@1.2.0
+RUN npm install -g grunt-cli@1.4.3
 #RUN npm install -g grunt@1.0.4
 RUN npm install -g yarn
 
